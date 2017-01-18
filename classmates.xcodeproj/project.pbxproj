@@ -8,13 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		ED2C32DF1E3006F600CC26C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C32DE1E3006F600CC26C4 /* AppDelegate.swift */; };
-		ED2C32E11E3006F600CC26C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C32E01E3006F600CC26C4 /* ViewController.swift */; };
+		ED2C32E11E3006F600CC26C4 /* PeopleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C32E01E3006F600CC26C4 /* PeopleListViewController.swift */; };
 		ED2C32E41E3006F600CC26C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2C32E21E3006F600CC26C4 /* Main.storyboard */; };
 		ED2C32E71E3006F600CC26C4 /* classmates.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED2C32E51E3006F600CC26C4 /* classmates.xcdatamodeld */; };
 		ED2C32E91E3006F600CC26C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED2C32E81E3006F600CC26C4 /* Assets.xcassets */; };
 		ED2C32EC1E3006F600CC26C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2C32EA1E3006F600CC26C4 /* LaunchScreen.storyboard */; };
 		ED2C32F71E3006F600CC26C4 /* classmatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C32F61E3006F600CC26C4 /* classmatesTests.swift */; };
 		ED2C33021E3006F600CC26C4 /* classmatesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C33011E3006F600CC26C4 /* classmatesUITests.swift */; };
+		ED2C33101E30079A00CC26C4 /* PeopleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C330F1E30079A00CC26C4 /* PeopleCell.swift */; };
+		ED2C33121E30108C00CC26C4 /* ClassmateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C33111E30108C00CC26C4 /* ClassmateDelegate.swift */; };
+		ED2C33141E3015B600CC26C4 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C33131E3015B600CC26C4 /* DetailsViewController.swift */; };
+		ED2C33161E30211700CC26C4 /* ShowDetailsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C33151E30211700CC26C4 /* ShowDetailsDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +41,7 @@
 /* Begin PBXFileReference section */
 		ED2C32DB1E3006F600CC26C4 /* classmates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = classmates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED2C32DE1E3006F600CC26C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ED2C32E01E3006F600CC26C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ED2C32E01E3006F600CC26C4 /* PeopleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListViewController.swift; sourceTree = "<group>"; };
 		ED2C32E31E3006F600CC26C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ED2C32E61E3006F600CC26C4 /* classmates.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = classmates.xcdatamodel; sourceTree = "<group>"; };
 		ED2C32E81E3006F600CC26C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +53,10 @@
 		ED2C32FD1E3006F600CC26C4 /* classmatesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = classmatesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED2C33011E3006F600CC26C4 /* classmatesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classmatesUITests.swift; sourceTree = "<group>"; };
 		ED2C33031E3006F600CC26C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED2C330F1E30079A00CC26C4 /* PeopleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleCell.swift; sourceTree = "<group>"; };
+		ED2C33111E30108C00CC26C4 /* ClassmateDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassmateDelegate.swift; sourceTree = "<group>"; };
+		ED2C33131E3015B600CC26C4 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		ED2C33151E30211700CC26C4 /* ShowDetailsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDetailsDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +108,16 @@
 			isa = PBXGroup;
 			children = (
 				ED2C32DE1E3006F600CC26C4 /* AppDelegate.swift */,
-				ED2C32E01E3006F600CC26C4 /* ViewController.swift */,
 				ED2C32E21E3006F600CC26C4 /* Main.storyboard */,
 				ED2C32E81E3006F600CC26C4 /* Assets.xcassets */,
 				ED2C32EA1E3006F600CC26C4 /* LaunchScreen.storyboard */,
 				ED2C32ED1E3006F600CC26C4 /* Info.plist */,
 				ED2C32E51E3006F600CC26C4 /* classmates.xcdatamodeld */,
+				ED2C330F1E30079A00CC26C4 /* PeopleCell.swift */,
+				ED2C32E01E3006F600CC26C4 /* PeopleListViewController.swift */,
+				ED2C33131E3015B600CC26C4 /* DetailsViewController.swift */,
+				ED2C33111E30108C00CC26C4 /* ClassmateDelegate.swift */,
+				ED2C33151E30211700CC26C4 /* ShowDetailsDelegate.swift */,
 			);
 			path = classmates;
 			sourceTree = "<group>";
@@ -262,9 +274,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED2C33121E30108C00CC26C4 /* ClassmateDelegate.swift in Sources */,
+				ED2C33101E30079A00CC26C4 /* PeopleCell.swift in Sources */,
+				ED2C33161E30211700CC26C4 /* ShowDetailsDelegate.swift in Sources */,
 				ED2C32E71E3006F600CC26C4 /* classmates.xcdatamodeld in Sources */,
-				ED2C32E11E3006F600CC26C4 /* ViewController.swift in Sources */,
+				ED2C32E11E3006F600CC26C4 /* PeopleListViewController.swift in Sources */,
 				ED2C32DF1E3006F600CC26C4 /* AppDelegate.swift in Sources */,
+				ED2C33141E3015B600CC26C4 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
