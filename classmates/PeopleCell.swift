@@ -11,6 +11,7 @@ import UIKit
 class PeopleCell: UITableViewCell {
     
     weak var delegate: ShowDetailsDelegate?
+
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var buttonLabel: UIButton!

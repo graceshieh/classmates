@@ -58,11 +58,16 @@ class PeopleListViewController: UITableViewController, ClassmateDelegate, ShowDe
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PeopleDetails" {
-            print("clicked")
+//            let indexPath = sender as! NSIndexPath
+            
+            var indexPath = tableView.indexPath(for: sender as! UITableViewCell)
+            
             let navigationController = segue.destination as! UINavigationController
             let myController = navigationController.topViewController as! DetailsViewController
             myController.delegate = self
-        
+            myController.classmate = people[(indexPath?.row)!]
+            myController.indexPath = indexPath as NSIndexPath?
+            
         }
     }
     
@@ -71,14 +76,23 @@ class PeopleListViewController: UITableViewController, ClassmateDelegate, ShowDe
     }
     
     func showButtonPressed(by cell: PeopleCell){
+        
         performSegue(withIdentifier: "PeopleDetails", sender: cell)
+        
     }
 
-    func saveButtonPressed(by controller: DetailsViewController, newName name: String, newDetails details: String, newImage image: String, at indexPath: NSIndexPath?) {
-        let newClassmate = NSEntityDescription.insertNewObject(forEntityName: "Classmate", into: managedObjectContext) as! Classmate
-        newClassmate.name = name
-        newClassmate.details = details
-        newClassmate.image = image
+    func saveButtonPressed(by controller: DetailsViewController, newName name: String, newDetails details: String, newImage image: String, at indexPath: NSIndexPath?, updated: Classmate?) {
+        if let updatedClassmate = updated{
+            updatedClassmate.name = name
+            updatedClassmate.details = details
+            updatedClassmate.image = image
+        }
+        else{
+            let newClassmate = NSEntityDescription.insertNewObject(forEntityName: "Classmate", into: managedObjectContext) as! Classmate
+            newClassmate.name = name
+            newClassmate.details = details
+            newClassmate.image = image
+        }
         if managedObjectContext.hasChanges {
             do{
                 try managedObjectContext.save()

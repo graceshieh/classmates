@@ -10,11 +10,8 @@ import UIKit
 
 class DetailsViewController: UITableViewController {
     weak var delegate : ClassmateDelegate?
-    var person: PeopleCell?
-    var name: String?
-    var details: String?
-    var image: String?
     var indexPath: NSIndexPath?
+    var classmate: Classmate? 
     
 //    var imagePicker = UIImagePickerController()
     
@@ -25,16 +22,16 @@ class DetailsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        imagePicker.delegate = self
-        if let updatePerson = person {
-            nameInputText.text = name
-            detailsInputText.text = details
+        if let ip = indexPath {
+            nameInputText.text = classmate?.name
+            detailsInputText.text = classmate?.details
 //            personImage.image = UIImage(image)
         }
         
     }
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        delegate?.saveButtonPressed(by: self, newName: nameInputText.text!, newDetails: detailsInputText.text!, newImage: "Chameleon", at: indexPath)
+        delegate?.saveButtonPressed(by: self, newName: nameInputText.text!, newDetails: detailsInputText.text!, newImage: "Chameleon", at: indexPath, updated: classmate)
     }
     
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {

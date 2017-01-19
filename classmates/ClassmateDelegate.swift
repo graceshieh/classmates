@@ -12,7 +12,7 @@ protocol ClassmateDelegate: class {
     
     func cancelButtonPressed(by controller: DetailsViewController)
     
-    func saveButtonPressed(by controller: DetailsViewController, newName name: String, newDetails details: String, newImage image: String, at indexPath: NSIndexPath?)
+    func saveButtonPressed(by controller: DetailsViewController, newName name: String, newDetails details: String, newImage image: String, at indexPath: NSIndexPath?, updated classmate: Classmate?)
     
 //    func showButtonPressed(by controller: PeopleListViewController)
     
