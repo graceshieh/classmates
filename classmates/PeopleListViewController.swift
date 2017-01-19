@@ -58,15 +58,21 @@ class PeopleListViewController: UITableViewController, ClassmateDelegate, ShowDe
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PeopleDetails" {
-//            let indexPath = sender as! NSIndexPath
             
-            var indexPath = tableView.indexPath(for: sender as! UITableViewCell)
-            
-            let navigationController = segue.destination as! UINavigationController
-            let myController = navigationController.topViewController as! DetailsViewController
-            myController.delegate = self
-            myController.classmate = people[(indexPath?.row)!]
-            myController.indexPath = indexPath as NSIndexPath?
+            if let senderObj = sender as? UITableViewCell {
+                let navigationController = segue.destination as! UINavigationController
+                let myController = navigationController.topViewController as! DetailsViewController
+                myController.delegate1 = self
+                var indexPath = tableView.indexPath(for: senderObj as UITableViewCell)
+                myController.classmate = people[(indexPath?.row)!]
+                myController.indexPath = indexPath as NSIndexPath?
+            }
+            else{
+                let navigationController = segue.destination as! UINavigationController
+                let myController = navigationController.topViewController as! DetailsViewController
+                myController.delegate1 = self
+            }
+      
             
         }
     }
@@ -111,6 +117,21 @@ class PeopleListViewController: UITableViewController, ClassmateDelegate, ShowDe
         }
         tableView.reloadData()
         dismiss(animated: true, completion: nil)
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        let personToDelete = people[indexPath.row]
+        managedObjectContext.delete(personToDelete)
+        if managedObjectContext.hasChanges {
+            do{
+                try managedObjectContext.save()
+            }
+            catch {
+                print("\(error)")
+            }
+        }
+        people.remove(at: indexPath.row)
+        tableView.reloadData()
     }
 
 }

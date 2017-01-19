@@ -59,7 +59,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Classmates" id="IWV-9r-kTB">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Em3-4s-TeE">
+                        <barButtonItem key="rightBarButtonItem" tag="1" systemItem="add" id="Em3-4s-TeE">
                             <connections>
                                 <segue destination="xmq-YF-czp" kind="presentation" identifier="PeopleDetails" id="lqp-jR-ELy"/>
                             </connections>

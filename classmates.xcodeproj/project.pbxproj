@@ -525,6 +525,7 @@
 				ED2C33081E3006F600CC26C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ED2C33091E3006F600CC26C4 /* Build configuration list for PBXNativeTarget "classmatesTests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +534,7 @@
 				ED2C330B1E3006F600CC26C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ED2C330C1E3006F600CC26C4 /* Build configuration list for PBXNativeTarget "classmatesUITests" */ = {
 			isa = XCConfigurationList;
@@ -541,6 +543,7 @@
 				ED2C330E1E3006F600CC26C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

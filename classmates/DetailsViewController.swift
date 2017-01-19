@@ -8,12 +8,12 @@
 
 import UIKit
 
-class DetailsViewController: UITableViewController {
-    weak var delegate : ClassmateDelegate?
+class DetailsViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    weak var delegate1 : ClassmateDelegate?
     var indexPath: NSIndexPath?
     var classmate: Classmate? 
     
-//    var imagePicker = UIImagePickerController()
+    var imagePicker = UIImagePickerController()
     
     @IBOutlet weak var nameInputText: UITextField!
     @IBOutlet weak var detailsInputText: UITextField!
@@ -21,7 +21,7 @@ class DetailsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        imagePicker.delegate = self
+        imagePicker.delegate = self
         if let ip = indexPath {
             nameInputText.text = classmate?.name
             detailsInputText.text = classmate?.details
@@ -31,20 +31,29 @@ class DetailsViewController: UITableViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        delegate?.saveButtonPressed(by: self, newName: nameInputText.text!, newDetails: detailsInputText.text!, newImage: "Chameleon", at: indexPath, updated: classmate)
+        delegate1?.saveButtonPressed(by: self, newName: nameInputText.text!, newDetails: detailsInputText.text!, newImage: "Chameleon", at: indexPath, updated: classmate)
     }
     
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
-        delegate?.cancelButtonPressed(by: self )
+        delegate1?.cancelButtonPressed(by: self )
     }
     
     
     @IBAction func newImageButtonPressed(_ sender: UIButton) {
-//        imagePicker.modalPresentationStyle = UIModalPresentationStyle.currentContext
-//        imagePicker.allowsEditing = false
-//        imagePicker.sourceType = .photoLibrary
-//        
-//        present(imagePicker, animated: true, completion: nil)
-        
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let chosenImage = info[UIImagePickerControllerOriginalImage]
+        personImage.contentMode = .scaleAspectFit
+        personImage.image = chosenImage as! UIImage?
+        dismiss(animated: true, completion: nil)
     }
 }
