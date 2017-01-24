@@ -50,10 +50,12 @@ class DetailsViewController: UITableViewController, UIImagePickerControllerDeleg
         dismiss(animated: true, completion: nil)
     }
     
+  
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let chosenImage = info[UIImagePickerControllerOriginalImage]
         personImage.contentMode = .scaleAspectFit
         personImage.image = chosenImage as! UIImage?
         dismiss(animated: true, completion: nil)
     }
+    
 }

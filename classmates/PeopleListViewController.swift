@@ -30,6 +30,7 @@ class PeopleListViewController: UITableViewController, ClassmateDelegate, ShowDe
 //                print("\(error)")
 //            }
 //        }
+        
         let peopleRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Classmate")
         do {
             let results = try managedObjectContext.fetch(peopleRequest)

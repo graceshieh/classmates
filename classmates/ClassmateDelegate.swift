@@ -14,7 +14,5 @@ protocol ClassmateDelegate: class {
     
     func saveButtonPressed(by controller: DetailsViewController, newName name: String, newDetails details: String, newImage image: String, at indexPath: NSIndexPath?, updated classmate: Classmate?)
     
-//    func showButtonPressed(by controller: PeopleListViewController)
-    
     
 }
